@@ -1,26 +1,30 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Solutions from './components/Solutions'
+import Projects from './components/Projects'
+import ComingSoon from './components/ComingSoon'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="bg-white text-black">
+      <Navbar />
+      <main>
+        <Hero />
+        <Solutions />
+        <Projects />
+        <ComingSoon title="Events" subtitle="Bald gibt es hier spannende Formate rund um Web, Design und Tech." />
+        <ComingSoon title="Shop" subtitle="Ausgewählte digitale Produkte und Templates – in Kürze verfügbar." />
+        <footer className="py-12 border-t border-black/10">
+          <div className="max-w-6xl mx-auto px-6 text-sm text-black/60 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>© {new Date().getFullYear()} CWAZY. Alle Rechte vorbehalten.</div>
+            <div className="flex items-center gap-4">
+              <a href="#loesungen" className="hover:text-black transition-colors">Lösungen</a>
+              <a href="#projekte" className="hover:text-black transition-colors">Projekte</a>
+              <a href="#" className="hover:text-black transition-colors">Kontakt</a>
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
   )
 }
